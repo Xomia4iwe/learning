@@ -1,0 +1,38 @@
+import turtle
+
+import random
+
+window = turtle.Screen()
+window.title('triangle_serp')
+turtle.shape('classic')
+import turtle as t
+
+t.pencolor('blue')
+t.penup()
+t.speed(40)
+
+a1 = (-200.00, -200.00)
+a2 = (400.00, -200.00)
+a3 = (100.00, 319.62)
+t.goto(a1)
+t.dot(3)
+t.goto(a2)
+t.dot(3)
+t.goto(a3)
+t.dot(3)
+l = [(-200.00, -200.00), (400.00, -200.00), (100.00, 319.62)]
+a = random.randint(-200, 400)
+b = random.randint(-200, 400)
+b1 = (a, b)
+t.goto(a, b)
+t.dot(3)
+b2 = random.choice(l)
+
+b = ((b2[0] + b1[0]) / 2, (b2[1] + b1[1]) / 2)
+for i in range(1500):
+    b2 = random.choice(l)
+    b = ((b2[0] + b[0])/2, (b2[1] + b[1])/2)
+    t.goto(b)
+    t.dot(3)
+
+window.exitonclick()
